@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import PlayInteraction from './PlayInteraction.jsx';
+import PlayerButtons from './PlayerButtons.jsx';
 
 class Station extends Component {
 
@@ -46,9 +46,10 @@ class Station extends Component {
           <div className="row station-row border">
             <div className="one-third column station-name center"> {this.props.name} </div>
             <div className="one-third column station-play-button center">
-             <PlayInteraction handleSelectedStation={ this.props.handleSelectedStation} station={ this.state.details } />
+              <PlayerButtons clickFunction={ this.props.handleSelectedStation } params={ this.state.details }
+              playState={ this.props.playState } activeStation={ this.props.activeStation } />
             </div>
-            <div className="one-third column station-info-button center">
+            <div className= "one-third column station-info-button center">
               <i className="fa fa-chevron-down card-chevron" aria-hidden="true" onClick={ this.onInfoSelect }></i>
             </div>
           </div>
